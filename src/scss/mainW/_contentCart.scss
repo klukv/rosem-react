@@ -1,0 +1,220 @@
+$margin-between-blocks: 50px;
+$letter-spacing-default: 0.7px;
+@mixin hoverFuncColor($color) {
+  &:hover {
+    color: $color;
+    cursor: pointer;
+  }
+}
+@mixin textOptions($fontSize, $font-weight, $line-height) {
+  font-size: $fontSize;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+@mixin LinkOptions($color, $font-weight, $line-height) {
+  color: $color;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+.container-card {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0px 5px;
+  flex: 0 0 auto;
+}
+.buttonAdd {
+  background-color: #f46d40;
+  border: 2px solid #f46d40;
+
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../assets/img/cart/plus-solid.svg);
+    background-repeat: no-repeat;
+    margin: auto;
+    top: 0;
+    left: 1px;
+    bottom: 0;
+    right: 0;
+  }
+  &:hover {
+    background-color: #ffffff;
+  }
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0px 5px;
+}
+main{
+  flex-grow: 1;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  @import "contentHeader";
+  .order {
+    &__name-page {
+      display: flex;
+      align-items: center;
+      margin: 82px 0px 5px 0px;
+    }
+    &__title {
+      padding-left: 20px;
+      @include textOptions(36px, 500, 30px);
+    }
+    &__icon {
+      width: 40px;
+      height: 40px;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    &__btn {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 5px;
+      border-bottom: 0.5px solid #bfbfbf;
+      img {
+        display: block;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &__clear {
+      padding: 0px 0px 5px 5px;
+      border: none;
+      background-color: #f2f2f2;
+      cursor: pointer;
+      @include textOptions(18px, 400, 30px);
+      color: #b6b6b6;
+    }
+    &__eat {
+      border-radius: 5px;
+      margin-top: 30px;
+      display: flex;
+      background-color: #ffffff;
+      overflow: hidden;
+      &-img {
+        flex: 0 0 280px;
+        align-self: center;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      &-info {
+        padding: 20px 20px 20px 20px;
+        flex-grow: 1;
+        position: relative;
+        &::before{
+          content: '';
+          top:12px;
+          right: 12px;
+          position: absolute;
+          background-image: url(../assets/img/cart/close.svg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          width: 11px;
+          height: 11px;
+          transition: all 0.2s ease;
+          &:hover::before{
+            transform: scale(1.7);
+          }
+      }
+      }
+      &-title {
+        @include textOptions(22px, 600, 22px);
+      }
+      &-close{
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 23px;
+        height: 23px;
+        border-radius: 10px;
+        border:2px solid #000000;
+        background: 0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover{
+          transform: scale(1.07);
+        }
+      }
+      &-weight {
+        padding: 14px 0px 22px 0px;
+        @include textOptions(16px, 500, 15px);
+        color: #ff9846;
+      }
+      &-price {
+        display: flex;
+        align-items: center;
+      }
+      &-totalPrice {
+        font-family: "DIN Pro bold";
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 17px;
+      }
+      &-totalCount {
+        padding: 0px 20px;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+      &-btn {
+        width: 21px;
+        height: 21px;
+        &::before {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+    &__structure {
+      padding: 20px 0px 17px 0px;
+      &-title {
+        @include textOptions(20px, 600, 15px);
+        padding-bottom: 13px;
+      }
+      &-text {
+        font-family: "DIN Pro light";
+        @include textOptions(16px, 300, 16px);
+      }
+    }
+    &__info-btn {
+      line-height: 20px;
+      color: #f2f2f2;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 5px 35px;
+      background-color: #f46d40;
+      border-radius: 5px;
+      border: 0;
+      cursor: pointer;
+    }
+    &__total{
+      margin-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      &-orders{
+        @include textOptions(20px, 400, 24px);
+        span{
+          font-weight: 600;
+        }
+      }
+      &-price{
+        @include textOptions(20px, 400, 24px);
+        span{
+          color: #F46D40;
+        }
+      }
+    }
+  }
+  @import "contentFooter";
+}

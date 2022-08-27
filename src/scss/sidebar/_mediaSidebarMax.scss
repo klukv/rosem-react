@@ -1,0 +1,22 @@
+@media (max-width: 1170px) {
+    .wrapper {
+      .sidebar__btn-menu-block {
+        position: absolute;
+        display: inline-block;
+        top: 118px;
+        left: 10px;
+        background-color: #f2f2f2;
+        z-index: 5;
+      }
+      .sidebar {
+        display: none;
+      }
+      .sidebar-position {
+        display: block;
+        position: fixed;
+        background-color: #ffffff;
+        z-index: 3;
+        height: 100%;
+      }
+    }
+  }

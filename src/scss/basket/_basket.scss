@@ -1,0 +1,68 @@
+.basket-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 29px;
+  white-space: nowrap;
+  margin: 0;
+}
+.basket-text {
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #a4acad;
+}
+.basket {
+  max-width: 460px;
+  flex-grow: 0;
+  &__order {
+    margin: 60px 100px 20px 40px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    &-title {
+      padding: 12px 31px 10px 30px;
+    }
+    &-text {
+      padding-bottom: 26px;
+    }
+    &-stock {
+      font-size: 14px;
+      color: #f2f2f2;
+      line-height: 17px;
+      text-align: center;
+      padding: 12px 0px;
+      background-color: #ff9846;
+      border-radius: 0px 0px 5px 5px;
+    }
+  }
+  &__map {
+    margin: 0px 100px 0px 40px;
+    
+    &-adress {
+      background-color: #f2f2f2;
+      border-radius: 0px 0px 5px 5px;
+      position: relative;
+      .basket__map-location {
+        position: absolute;
+        margin: auto;
+        top: -25%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: #ff9846;
+      }
+
+      .basket__adress-title {
+        padding: 38px 0px 10px 0px;
+      }
+      .basket__adress-text {
+        padding-bottom: 7px;
+      }
+    }
+  }
+}

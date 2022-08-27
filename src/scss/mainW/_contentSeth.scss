@@ -1,0 +1,136 @@
+$margin-between-blocks: 50px;
+$letter-spacing-default: 0.7px;
+$heightOfLink: 9px;
+@mixin hoverFuncColor($color) {
+  &:hover {
+    color: $color;
+    cursor: pointer;
+  }
+}
+@mixin hoverLinkOptions($color, $font-weight, $line-height) {
+  color: $color;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0px 5px;
+}
+main {
+  flex-grow: 1;
+  background-color: #f2f2f2;
+  @import "contentHeader";
+  .cards{
+    &__title{
+      margin: 30px 0px;
+      font-size: 36px;
+      line-height: 45px;
+      font-weight: 400;
+      padding-left: 65px;
+      position: relative;
+      &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        background-image: url(../assets/img/seths/seths.svg);
+        background-repeat: no-repeat;
+        width: 41px;
+        height: 43px;
+      }
+    }
+    &__inner{
+      display: grid;
+      grid-template-columns: 288px 288px 288px;
+      column-gap: 42px;
+      row-gap: 31px;
+    }
+    &__seth {
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      &-image {
+        padding: 1px 19px 15px 17px;
+        flex: 0 0 auto;
+      }
+      &-title {
+        font-size: 24px;
+        line-height: 30px;
+        padding: 0px 95px 0px 17px;
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+      }
+      &-description {
+        font-size: 18px;
+        line-height: 22px;
+        color: #a4acad;
+        padding: 15px 0px 20px 17px;
+        border-bottom: 0.5px solid #a4acad;
+        flex: 0 0 auto;
+      }
+      &-down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 11px 9px 10px 17px;
+        flex: 0 0 auto;
+      }
+      &-size {
+        line-height: 30px;
+        font-weight: 700;
+        padding-right: 12px;
+      }
+      &-btn {
+        line-height: 30px;
+        color: #f2f2f2;
+        padding: 5px 42px;
+        background-color: #f46d40;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+      }
+    }
+  }
+  .description {
+    margin-top: $margin-between-blocks + 124px;
+    &__title {
+      font-size: 24px;
+      line-height: 30px;
+      padding-bottom: 10px;
+      color: #a4acad;
+    }
+    &-text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 19px;
+      color: #a4acad;
+    }
+    &__menu-title {
+      font-weight: 400;
+    }
+    &__par2 {
+      padding-bottom: 24px;
+    }
+    &__detailed {
+      text-align: center;
+      position: relative;
+      a {
+        padding-right: 10px;
+        line-height: 24px;
+        color: #f46d40;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../assets/img/main/description/arrowDown.svg);
+        width: 17px;
+        height: 9px;
+        bottom: $heightOfLink / 2;
+        cursor: pointer;
+      }
+    }
+  }
+  @import "contentFooter";
+}
