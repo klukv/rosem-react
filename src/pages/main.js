@@ -1,29 +1,41 @@
-import '../scss/main.scss';
-import '../scss/media.scss';
+import "../scss/main.scss";
+import "../scss/media.scss";
 
-import React from 'react';
+import React from "react";
 
-import chicken from '../assets/img/main/cards/chicken.jpg';
-import cornDog from '../assets/img/main/cards/corn_dog.jpg';
-import eel from '../assets/img/main/cards/eel.jpg';
-import pizza from '../assets/img/main/cards/pizza.jpg';
-import stocks from '../assets/img/main/cards/stocks.jpg';
-import salomon from '../assets/img/main/new/salomon.jpg';
-import defaultPhilad from '../assets/img/main/new/defaultPhilad.jpg';
-import bigPhilad from '../assets/img/main/new/bigPhilad.jpg';
+import chicken from "../assets/img/main/cards/chicken.jpg";
+import cornDog from "../assets/img/main/cards/corn_dog.jpg";
+import eel from "../assets/img/main/cards/eel.jpg";
+import pizza from "../assets/img/main/cards/pizza.jpg";
+import stocks from "../assets/img/main/cards/stocks.jpg";
+import salomon from "../assets/img/main/new/salomon.jpg";
+import defaultPhilad from "../assets/img/main/new/defaultPhilad.jpg";
+import bigPhilad from "../assets/img/main/new/bigPhilad.jpg";
+import backImg from "../assets/img/main/slider/philadelphia.jpg";
 
-import backImg from '../assets/img/main/slider/philadelphia.jpg';
-import Sidebar from '../components/Sidebar';
-import Basket from '../components/Basket';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { Sidebar, Basket, Header, Footer } from "../components";
 
 function Main() {
+
   return (
     <div className="wrapper">
-        <Sidebar/>
+      <Sidebar
+      onClick={(menu)=> console.log(menu)}
+        items={[
+          "Пицца",
+          "Сеты",
+          "WOK",
+          "Роллы",
+          "Суши",
+          "Салаты",
+          "Супы",
+          "Корн доги",
+          "Напитки",
+          "Акции",
+        ]}
+      />
       <main>
-        <Header/>
+        <Header />
         <section className="slider">
           <div className="container">
             <div className="slider__img">
@@ -35,40 +47,34 @@ function Main() {
           <div className="container">
             <div className="cards__inner_main">
               <div className="cards__chicken cards-block">
-                <div className="cards__name"><a href="#">Чикен</a></div>
-                <img
-                  className="chicken"
-                  src={chicken}
-                  alt="chicken"
-                />
+                <div className="cards__name">
+                  <a href="#">Чикен</a>
+                </div>
+                <img className="chicken" src={chicken} alt="chicken" />
               </div>
               <div className="cards__eel cards-block">
-                <div className="cards__name"><a href="#">С угрем</a></div>
+                <div className="cards__name">
+                  <a href="#">С угрем</a>
+                </div>
                 <img className="eel" src={eel} alt="eel" />
               </div>
               <div className="cards__corn cards-block">
-                <div className="cards__name"><a href="#">Корн дог</a></div>
-                <img
-                  className="corn_dog"
-                  src={cornDog}
-                  alt="corn_dog"
-                />
+                <div className="cards__name">
+                  <a href="#">Корн дог</a>
+                </div>
+                <img className="corn_dog" src={cornDog} alt="corn_dog" />
               </div>
               <div className="cards__pizza cards-block">
-                <div className="cards__name"><a href="#">Пицца</a></div>
-                <img
-                  className="pizza"
-                  src={pizza}
-                  alt="pizza"
-                />
+                <div className="cards__name">
+                  <a href="#">Пицца</a>
+                </div>
+                <img className="pizza" src={pizza} alt="pizza" />
               </div>
               <div className="cards__stocks cards-block">
-                <div className="cards__name"><a href="#">Акции</a></div>
-                <img
-                  className="stocks"
-                  src={stocks}
-                  alt="stocks"
-                />
+                <div className="cards__name">
+                  <a href="#">Акции</a>
+                </div>
+                <img className="stocks" src={stocks} alt="stocks" />
               </div>
             </div>
           </div>
@@ -76,8 +82,12 @@ function Main() {
         <section className="new">
           <div className="container">
             <div className="new__menu">
-              <h2 className="new__menu-title">Новинки</h2>
-              <div className="new__menu-popular">Популярное</div>
+              <h2 className="new__menu-title">
+                <a href="#">Новинки</a>
+              </h2>
+              <div className="new__menu-popular">
+                <a href="#">Популярное</a>
+              </div>
             </div>
             <div className="new__slider">
               <div className="new__seth seth">
@@ -85,7 +95,9 @@ function Main() {
                   <img src={salomon} alt="seth" />
                 </div>
                 <h2 className="new__seth-title">Саломон сет</h2>
-                <div className="new__seth-description">1050 грамм, 30 кусочков</div>
+                <div className="new__seth-description">
+                  1050 грамм, 30 кусочков
+                </div>
                 <div className="new__seth-down">
                   <div className="new__seth-size">1500 гр.</div>
                   <button className="new__seth-btn">Хочу!</button>
@@ -96,7 +108,9 @@ function Main() {
                   <img src={defaultPhilad} alt="seth" />
                 </div>
                 <h2 className="new__seth-title">Филадельфия и лосось сет</h2>
-                <div className="new__seth-description">1260 грамм, 36 кусочков</div>
+                <div className="new__seth-description">
+                  1260 грамм, 36 кусочков
+                </div>
                 <div className="new__seth-down">
                   <div className="new__seth-size">1150 гр.</div>
                   <button className="new__seth-btn">Хочу!</button>
@@ -107,7 +121,9 @@ function Main() {
                   <img src={bigPhilad} alt="seth" />
                 </div>
                 <h2 className="new__seth-title">Самая большая Филадельфия</h2>
-                <div className="new__seth-description">1050 грамм, 30 кусочков</div>
+                <div className="new__seth-description">
+                  1050 грамм, 30 кусочков
+                </div>
                 <div className="new__seth-down">
                   <div className="new__seth-size">2100 гр.</div>
                   <button className="new__seth-btn">Хочу!</button>
@@ -118,7 +134,9 @@ function Main() {
                   <img src="./img/main/new/salomon.jpg" alt="seth" />
                 </div>
                 <h2 className="new__seth-title">Саломон сет</h2>
-                <div className="new__seth-description">1050 грамм, 30 кусочков</div>
+                <div className="new__seth-description">
+                  1050 грамм, 30 кусочков
+                </div>
                 <div className="new__seth-down">
                   <div className="new__seth-size">1500 гр.</div>
                   <button className="new__seth-btn">Хочу!</button>
@@ -162,13 +180,15 @@ function Main() {
               креветки, гребешки, тунец, лосось и окунь.
             </p>
             <div className="description__detailed">
-              <a className="detailed__link" href="#">Подробнее</a>
+              <a className="detailed__link" href="#">
+                Подробнее
+              </a>
             </div>
           </div>
         </section>
-        <Footer/>
+        <Footer />
       </main>
-      <Basket/>
+      <Basket />
     </div>
   );
 }

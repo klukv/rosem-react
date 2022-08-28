@@ -76,85 +76,40 @@ $heightIcon: 30px;
         padding-bottom: 0px;
       }
     }
+    .active {
+      a {
+        color: #ff9846;
+      }
+    }
     .pizza {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .seth {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .wok {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .rolls {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .sushi {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .salad {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .soup {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .corn {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .drink {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
     .stock {
-      @include sidebarMenu(
-        $padding-left-icon,
-        $widthIcon,
-        $heightIcon,
-        ""
-      );
+      @include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
     }
   }
 }
