@@ -1,86 +1,134 @@
 .header {
-  margin-bottom: 30px;
-  border-bottom: 0.5px solid #a4acad;
-  flex: 0 0 auto;
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__contacts {
-    padding: 6px 18px 8px 0px;
-    border-right: 0.5px solid #a4acad;
-    &-title {
-      font-size: 18px;
-      line-height: 22px;
-      font-weight: 600;
-      letter-spacing: $letter-spacing-default;
-      text-align: center;
-      margin: 0;
-      padding-left: 38px;
-    }
-    &-phone {
-      text-align: center;
-      padding-left: 38px;
-      a {
-        color: #ff9846;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 18px;
-      }
-    }
-    &-chart {
-      padding: 5px 0px 0px 38px;
-      font-size: 14px;
-      color: #a4acad;
-      font-weight: 500;
-      line-height: 17px;
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        left: 17px;
-        background-image: url(../assets/img/main/header/clocks.svg);
-        width: 15px;
-        height: 15px;
-        background-repeat: no-repeat;
-      }
-    }
-  }
-  &__city {
-    flex-grow: 1;
-    padding: 26px 0px 0px 15px;
-    &-title {
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 17px;
-      color: #a4acad;
-      padding-bottom: 4px;
-      letter-spacing: $letter-spacing-default;
-      margin: 0;
-    }
-    &-name {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 22px;
-    }
-  }
-  &__clients {
-    display: flex;
-    padding: 37px 40px 35px 0px;
-    a {
-      font-size: 18px;
-      font-weight: 400;
-      color: #111111;
-      line-height: 22px;
-      
-      @include hoverFuncColor(#ff9846);
-    }
-    position: relative;
-    &-reviews {
-      padding-right: 30px;
-    }
-    &-search {
-      padding-left: 69px;
-    }
-  }
+	margin-bottom: 30px;
+	border-bottom: 0.5px solid #a4acad;
+	flex: 0 0 auto;
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__contacts {
+		padding: 6px 18px 8px 0px;
+		border-right: 0.5px solid #a4acad;
+		&-title {
+			font-size: 18px;
+			line-height: 22px;
+			font-weight: 600;
+			letter-spacing: $letter-spacing-default;
+			text-align: center;
+			margin: 0;
+			padding-left: 38px;
+		}
+		&-phone {
+			text-align: center;
+			padding-left: 38px;
+			a {
+				color: #ff9846;
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 18px;
+			}
+		}
+		&-chart {
+			padding: 5px 0px 0px 38px;
+			font-size: 14px;
+			color: #a4acad;
+			font-weight: 500;
+			line-height: 17px;
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				left: 17px;
+				background-image: url(../assets/img/main/header/clocks.svg);
+				width: 15px;
+				height: 15px;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+	&__city {
+		flex-grow: 1;
+		padding: 26px 0px 0px 15px;
+		&-title {
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 17px;
+			color: #a4acad;
+			padding-bottom: 4px;
+			letter-spacing: $letter-spacing-default;
+			margin: 0;
+		}
+		&-name {
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 22px;
+		}
+	}
+	&__clients {
+		display: flex;
+		padding: 37px 40px 35px 0px;
+		a {
+			font-size: 18px;
+			font-weight: 400;
+			color: #111111;
+			line-height: 22px;
+
+			@include hoverFuncColor(#ff9846);
+		}
+		position: relative;
+		&-reviews {
+			padding-right: 30px;
+		}
+		&-delivery {
+			padding-right: 30px;
+		}
+
+		&-sort {
+			font-size: 14px;
+			position: relative;
+		}
+		&-div {
+			position: absolute;
+			top: 40px;
+			left: 0;
+			padding-top: 5px;
+		}
+		&-menu {
+			margin: 0px;
+			background-color: #ffffff;
+			list-style: none;
+			white-space: nowrap;
+			border-radius: 15px 15px 0px 0px;
+			padding: 0px 9px;
+		}
+
+		&-point {
+			padding-bottom: 20px;
+			padding-left: 5px;
+			a {
+				font-size: 18px;
+				font-weight: normal;
+				line-height: 22px;
+				color: #111111;
+			}
+		}
+		.first-point {
+			padding-top: 10px;
+		}
+		.main-point {
+			padding-bottom: 10px;
+			border-bottom: 0.5px solid #a4acad;
+		}
+		&-title {
+			font-size: 14px;
+			display: block;
+			margin: 4px 0px 5px 0px;
+			color: #a4acad;
+			font-weight: 300;
+			padding-left: 5px;
+		}
+		&-search {
+			padding-left: 69px;
+		}
+	}
 }

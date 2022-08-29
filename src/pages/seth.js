@@ -1,6 +1,7 @@
 import React from "react";
 
 import "../scss/seths.scss";
+import "../scss/media.scss";
 
 import salomon from "../assets/img/seths/salomon.png";
 import fivePhilad from "../assets/img/seths/fivePhilad.png";
@@ -40,55 +41,55 @@ function Seth() {
               <div className="cards__inner">
                 <SethProduct
                   title={"Саломон сет"}
-                  description={"1050 грамм 35 кусочек"}
+                  description={"1050 грамм 35 шт."}
                   size={"1399 гр."}
                   productImg={salomon}
                 />
                 <SethProduct
                   title={'Сет "5 Филадельфий"'}
-                  description={"1120 грамм 40 кусочек"}
+                  description={"1120 грамм 40 шт."}
                   size={"1499 гр."}
                   productImg={fivePhilad}
                 />
                 <SethProduct
                   title={"Филадельфия и лосось сет"}
-                  description={"1260 грамм 36 кусочек"}
+                  description={"1260 грамм 36 шт."}
                   size={"1499 гр."}
                   productImg={philadLosos}
                 />
                 <SethProduct
                   title={'Сет "6 Филадельфий"'}
-                  description={"1320 грамм 46 кусочек"}
+                  description={"1320 грамм 46 шт."}
                   size={"1559 гр."}
                   productImg={sixPhilad}
                 />
                 <SethProduct
                   title={"Топовый сет"}
-                  description={"1020 грамм 40 кусочек"}
+                  description={"1020 грамм 40 шт."}
                   size={"1519 гр."}
                   productImg={topSet}
                 />
                 <SethProduct
                   title={"Камикадзе сет"}
-                  description={"1200 грамм 52 кусочек"}
+                  description={"1200 грамм 52 шт."}
                   size={"1329 гр."}
                   productImg={kamikadze}
                 />
                 <SethProduct
                   title={'Сет "4 Филадельфии"'}
-                  description={"1100 грамм 32 кусочек"}
+                  description={"1100 грамм 32 шт."}
                   size={"1559 гр."}
                   productImg={fourPhilad}
                 />
                 <SethProduct
                   title={"Филадельфия LOVE сет"}
-                  description={"1000 грамм 40 кусочек"}
+                  description={"1000 грамм 40 шт."}
                   size={"1653 гр."}
                   productImg={loveSet}
                 />
                 <SethProduct
                   title={"Якудза сет"}
-                  description={"1270 грамм 50 кусочек"}
+                  description={"1270 грамм 50 шт."}
                   size={"1299 гр."}
                   productImg={yakudzaSet}
                 />
