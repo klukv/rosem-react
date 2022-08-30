@@ -11,13 +11,10 @@ import Seth from "./pages/seth";
 function App() {
   return (
     <Routes>
-      {
-        publicRoutes.map(({path, Component}) => (
+      {publicRoutes.map(({ path, Component }) => (
         <Route key={path} path={path} element={<Component />} />
-        ))
-      }
+      ))}
     </Routes>
-    
   );
 }
 

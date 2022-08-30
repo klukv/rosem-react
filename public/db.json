@@ -1,0 +1,77 @@
+{
+	"seths":[
+		{
+			"id": 0,
+			"imageUrl": 0,
+			"name": "Саломон сет",
+			"weight": 1050,
+			"quantity": 35,
+			"price": 1399
+		},
+		{
+			"id": 1,
+			"imageUrl": 0,
+			"name": "Сет '5 Филадельфий'",
+			"weight": 1120,
+			"quantity": 40,
+			"price": 1499
+		},
+		{
+			"id": 2,
+			"imageUrl": 0,
+			"name": "Филадельфия и лосось сет",
+			"weight": 1260,
+			"quantity": 36,
+			"price": 1499
+		},
+		{
+			"id": 3,
+			"imageUrl": 0,
+			"name": "Сет '6 Филадельфий'",
+			"weight": 1320,
+			"quantity": 46,
+			"price": 1559
+		},
+		{
+			"id": 4,
+			"imageUrl": 0,
+			"name": "Топовый сет",
+			"weight": 1020,
+			"quantity": 40,
+			"price": 1519
+		},
+		{
+			"id": 5,
+			"imageUrl": 0,
+			"name": "Камикадзе сет",
+			"weight": 1200,
+			"quantity": 52,
+			"price": 1329
+		},
+		{
+			"id": 6,
+			"imageUrl": 0,
+			"name": "Сет '4 Филадельфии'",
+			"weight": 1100,
+			"quantity": 32,
+			"price": 1559
+		},
+		{
+			"id": 7,
+			"imageUrl": 0,
+			"name": "Филадельфия LOVE сет",
+			"weight": 1000,
+			"quantity": 40,
+			"price": 1653
+		},
+		{
+			"id": 8,
+			"imageUrl": 0,
+			"name": "Якудза сет",
+			"weight": 1270,
+			"quantity": 50,
+			"price": 1299
+		}
+
+	]
+}

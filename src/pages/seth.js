@@ -1,7 +1,5 @@
-import React from "react";
-
-import "../scss/seths.scss";
-import "../scss/media.scss";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 import salomon from "../assets/img/seths/salomon.png";
 import fivePhilad from "../assets/img/seths/fivePhilad.png";
@@ -14,11 +12,19 @@ import topSet from "../assets/img/seths/topSet.png";
 import yakudzaSet from "../assets/img/seths/yakudzaSet.png";
 
 import { Sidebar, Basket, Header, Footer, SethProduct } from "../components";
+import axios from "axios";
 
 function Seth() {
+  const [seths, setSeths] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/db.json")
+      .then(({ data }) => setSeths(data.seths));
+  }, []);
   return (
     <div className="wrapper">
       <Sidebar
+        onClick={(menu) => console.log(menu)}
         items={[
           "Пицца",
           "Сеты",
@@ -39,60 +45,15 @@ function Seth() {
             <div className="cards__inner-title">
               <div className="cards__title">Сеты</div>
               <div className="cards__inner">
-                <SethProduct
-                  title={"Саломон сет"}
-                  description={"1050 грамм 35 шт."}
-                  size={"1399 гр."}
-                  productImg={salomon}
-                />
-                <SethProduct
-                  title={'Сет "5 Филадельфий"'}
-                  description={"1120 грамм 40 шт."}
-                  size={"1499 гр."}
-                  productImg={fivePhilad}
-                />
-                <SethProduct
-                  title={"Филадельфия и лосось сет"}
-                  description={"1260 грамм 36 шт."}
-                  size={"1499 гр."}
-                  productImg={philadLosos}
-                />
-                <SethProduct
-                  title={'Сет "6 Филадельфий"'}
-                  description={"1320 грамм 46 шт."}
-                  size={"1559 гр."}
-                  productImg={sixPhilad}
-                />
-                <SethProduct
-                  title={"Топовый сет"}
-                  description={"1020 грамм 40 шт."}
-                  size={"1519 гр."}
-                  productImg={topSet}
-                />
-                <SethProduct
-                  title={"Камикадзе сет"}
-                  description={"1200 грамм 52 шт."}
-                  size={"1329 гр."}
-                  productImg={kamikadze}
-                />
-                <SethProduct
-                  title={'Сет "4 Филадельфии"'}
-                  description={"1100 грамм 32 шт."}
-                  size={"1559 гр."}
-                  productImg={fourPhilad}
-                />
-                <SethProduct
-                  title={"Филадельфия LOVE сет"}
-                  description={"1000 грамм 40 шт."}
-                  size={"1653 гр."}
-                  productImg={loveSet}
-                />
-                <SethProduct
-                  title={"Якудза сет"}
-                  description={"1270 грамм 50 шт."}
-                  size={"1299 гр."}
-                  productImg={yakudzaSet}
-                />
+                {seths.map((component) => (
+                  <SethProduct
+                    key={component.id}
+                    title={component.name}
+                    description={`${component.weight} грамм ${component.quantity} шт.`}
+                    price={component.price}
+                    productImg={salomon}
+                  />
+                ))}
               </div>
             </div>
           </div>

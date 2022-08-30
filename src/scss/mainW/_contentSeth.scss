@@ -20,7 +20,6 @@ $heightOfLink: 9px;
 main {
 	flex-grow: 1;
 	background-color: #f2f2f2;
-	@import "contentHeader";
 	.cards {
 		margin: 0px;
 		&__title {
@@ -134,5 +133,4 @@ main {
 			}
 		}
 	}
-	@import "contentFooter";
 }

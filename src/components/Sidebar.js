@@ -9,10 +9,14 @@ function Sidebar({ items, onClick }) {
   let onSelectItem = (index) => {
     setActiveItem(index);
   };
+  const [sidebarMenu, setSidebarMenu] = useState(false);
   return (
     <div>
-      <div className="sidebar__btn-menu-block"></div>
-      <div className="sidebar">
+      <div
+        onClick={() => setSidebarMenu(!sidebarMenu)}
+        className="sidebar__btn-menu-block"
+      ></div>
+      <div className={sidebarMenu ? "sidebar sidebar-position" : "sidebar"}>
         <div className="sidebar__logo-block">
           <div className="sidebar__logo">
             <Link to={main}>

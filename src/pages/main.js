@@ -1,4 +1,6 @@
 import "../scss/main.scss";
+import "../scss/cart.scss";
+import "../scss/seths.scss";
 import "../scss/media.scss";
 
 import React from "react";
@@ -16,11 +18,10 @@ import backImg from "../assets/img/main/slider/philadelphia.jpg";
 import { Sidebar, Basket, Header, Footer } from "../components";
 
 function Main() {
-
   return (
     <div className="wrapper">
       <Sidebar
-      onClick={(menu)=> console.log(menu)}
+        onClick={(menu) => console.log(menu)}
         items={[
           "Пицца",
           "Сеты",

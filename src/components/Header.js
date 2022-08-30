@@ -10,12 +10,14 @@ function Header() {
     <header className="header">
       <div className="header__inner">
         <div className="header__contacts">
-          <h2 className="header__contacts-title">Наш телефон</h2>
-          <div className="header__contacts-phone">
-            <a href="tel:996705188955">+996 705 188 955</a>
-          </div>
-          <div className="header__contacts-phone">
-            <a href="tel:996555188955">+996 555 188 955</a>
+          <div className="header__contacts-connect">
+            <h2 className="header__contacts-title">Наш телефон</h2>
+            <div className="header__contacts-phone">
+              <a href="tel:996705188955">+996 705 188 955</a>
+            </div>
+            <div className="header__contacts-phone">
+              <a href="tel:996555188955">+996 555 188 955</a>
+            </div>
           </div>
           <div className="header__contacts-chart">
             работаем с 10:00 до 00:00
@@ -32,7 +34,7 @@ function Header() {
           <div className="header__clients-delivery">
             <Link to={cart}>Корзина</Link>
           </div>
-          <SortPopup />
+          {/* <SortPopup /> */}
           <div className="header__clients-search">
             <a href="#">
               <img src={search} alt="search" />

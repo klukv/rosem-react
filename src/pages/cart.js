@@ -1,6 +1,5 @@
 import React from "react";
 
-import "../scss/cart.scss";
 import rubbish from "../assets/img/cart/rubbish.svg";
 import basket from "../assets/img/cart/basket.png";
 import order from "../assets/img/cart/order.jpg";

@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 h1,
 h2,
@@ -7,31 +7,30 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+	margin: 0;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 @font-face {
-  font-family: "DIN Pro";
-  src: local(DIN Pro), url(./fonts/Din_Pro/Din_ProRegular/dinpro.otf);
+	font-family: "DIN Pro";
+	src: local(DIN Pro), url(./fonts/Din_Pro/Din_ProRegular/dinpro.otf);
 }
 
-
 body {
-  font-family: "DIN Pro", sans-serif;
-  // font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  color: #000000;
-  margin: 0px;
+	font-family: "DIN Pro", sans-serif;
+	// font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #000000;
+	margin: 0px;
 }
 
 .wrapper {
-  display: flex;
-  justify-content: space-between;
-  @import "sidebar/sidebar";
-  @import "mainW/contentMain";
-  @import "basket/basket";
+	display: flex;
+	justify-content: space-between;
+	@import "sidebar/sidebar";
+	@import "mainW/contentMain";
+	@import "basket/basket";
 }
