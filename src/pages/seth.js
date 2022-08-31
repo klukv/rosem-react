@@ -16,6 +16,7 @@ import axios from "axios";
 
 function Seth() {
   const [seths, setSeths] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://localhost:3000/db.json")

@@ -15,6 +15,7 @@ $heightIcon: 30px;
 		height: $height;
 	}
 }
+
 .sidebar__btn-menu-block {
 	display: none;
 	position: relative;
@@ -74,11 +75,6 @@ $heightIcon: 30px;
 			}
 			&:last-child {
 				padding-bottom: 0px;
-			}
-		}
-		.active {
-			a {
-				color: #ff9846;
 			}
 		}
 		.pizza {

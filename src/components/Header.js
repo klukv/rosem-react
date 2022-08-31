@@ -34,7 +34,16 @@ function Header() {
           <div className="header__clients-delivery">
             <Link to={cart}>Корзина</Link>
           </div>
-          {/* <SortPopup /> */}
+          <SortPopup
+            items={[
+              { name: "По умолчанию", type: "default" },
+              { name: "Название", type: "name" },
+              { name: "Сначала дешевле", type: "more_cheaper" },
+              { name: "Сначала дороже", type: "more_expensive" },
+              { name: "Количество штук", type: "quantity" },
+              { name: "Вес", type: "weight" },
+            ]}
+          />
           <div className="header__clients-search">
             <a href="#">
               <img src={search} alt="search" />

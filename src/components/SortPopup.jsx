@@ -1,14 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 
-function SortPopup() {
+function SortPopup({ items }) {
   const sortRef = useRef();
   const [visiablePopup, setVisiablePopup] = useState(false);
+  const [activeItem, setActiveItem] = useState(0);
+  const activeLabel = items[activeItem].name;
 
+  const setItemSort = (index) => {
+    setActiveItem(index);
+    setVisiablePopup(false);
+  };
   const handleClick = (e) => {
     if (!e.path.includes(sortRef.current)) {
       setVisiablePopup(false);
     }
   };
+
   useEffect(() => {
     document.body.addEventListener("click", handleClick);
   });
@@ -17,7 +24,7 @@ function SortPopup() {
       <a href="#" className="header__clients-link">
         Cортировать: <br />
         <span onClick={() => setVisiablePopup(!visiablePopup)}>
-          по умолчанию
+          {activeLabel}
         </span>
       </a>
       <div className="header__clients-div">
@@ -25,26 +32,26 @@ function SortPopup() {
           <ul className="header__clients-menu">
             <b className="header__clients-title">Сортировка</b>
             <li className="header__clients-point main-point">
-              <a href="#">По умолчанию</a>
+              <a href="#">{activeLabel}</a>
             </li>
-            <li className="header__clients-point first-point">
-              <a href="#">По умолчанию</a>
-            </li>
-            <li className="header__clients-point">
-              <a href="#">Название</a>{" "}
-            </li>
-            <li className="header__clients-point">
-              <a href="#">Сначала дешевле</a>
-            </li>
-            <li className="header__clients-point">
-              <a href="#">Сначала дороже</a>
-            </li>
-            <li className="header__clients-point">
-              <a href="#">Количество штук</a>
-            </li>
-            <li className="header__clients-point">
-              <a href="#">Вес</a>
-            </li>
+            {items.map((obj, index) => (
+              <li
+                key={index}
+                className={
+                  obj.name === "По умолчанию"
+                    ? "header__clients-point first-point"
+                    : "header__clients-point"
+                }
+              >
+                <a
+                  className={activeItem === index ? "active" : ""}
+                  onClick={() => setItemSort(index)}
+                  href="#"
+                >
+                  {obj.name}
+                </a>
+              </li>
+            ))}
           </ul>
         )}
       </div>

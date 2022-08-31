@@ -28,6 +28,12 @@ body {
 }
 
 .wrapper {
+	.active {
+		color: #ff9846 !important;
+		a {
+			color: #ff9846 !important;
+		}
+	}
 	display: flex;
 	justify-content: space-between;
 	@import "sidebar/sidebar";
