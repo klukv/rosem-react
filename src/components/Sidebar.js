@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/img/sidebar/logo.svg";
@@ -10,6 +10,7 @@ function Sidebar({ items, onClickItem }) {
     setActiveItem(index);
     onClickItem(index);
   };
+
   const [sidebarMenu, setSidebarMenu] = useState(false);
   return (
     <div>

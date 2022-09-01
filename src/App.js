@@ -9,9 +9,10 @@ import axios from "axios";
 import Main from "./pages/main";
 import Cart from "./pages/cart";
 import Seth from "./pages/seth";
+import { Sidebar, Basket, Header, Footer, SethProduct } from "./components";
+import { setCategory } from "./redux/actions/actionFilters";
 
 function App() {
-  // изменить структуру сайта, переместить в App.js компоненты, которые не перерендериваются(sidebar, footer, header и тд.)
   const dispatch = useDispatch();
   useEffect(() => {
     axios
@@ -19,11 +20,33 @@ function App() {
       .then(({ data }) => dispatch(actionSeths(data.seths)));
   }, []);
   return (
-    <Routes>
-      {publicRoutes.map(({ path, Component }) => (
-        <Route key={path} path={path} element={<Component />} />
-      ))}
-    </Routes>
+    <div className="wrapper">
+      <Sidebar
+        onClickItem={(index) => setCategory(index)}
+        items={[
+          "Пицца",
+          "Сеты",
+          "WOK",
+          "Роллы",
+          "Суши",
+          "Салаты",
+          "Супы",
+          "Корн доги",
+          "Напитки",
+          "Акции",
+        ]}
+      />
+      <main>
+        <Header />
+        <Routes>
+          {publicRoutes.map(({ path, Component }) => (
+            <Route key={path} path={path} element={<Component />} />
+          ))}
+        </Routes>
+        <Footer />
+      </main>
+      <Basket />
+    </div>
   );
 }
 
