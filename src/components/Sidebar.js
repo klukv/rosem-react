@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import logo from "../assets/img/sidebar/logo.svg";
 import { main, seth } from "../utils/const";
 
-function Sidebar({ items, onClick }) {
+function Sidebar({ items, onClickItem }) {
   const [activeItem, setActiveItem] = useState(null);
   let onSelectItem = (index) => {
     setActiveItem(index);
+    onClickItem(index);
   };
   const [sidebarMenu, setSidebarMenu] = useState(false);
   return (

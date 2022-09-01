@@ -16,12 +16,13 @@ import bigPhilad from "../assets/img/main/new/bigPhilad.jpg";
 import backImg from "../assets/img/main/slider/philadelphia.jpg";
 
 import { Sidebar, Basket, Header, Footer } from "../components";
+import { setCategory } from "../redux/actions/actionFilters";
 
 function Main() {
   return (
     <div className="wrapper">
       <Sidebar
-        onClick={(menu) => console.log(menu)}
+        onClickItem={(index) => setCategory(index)}
         items={[
           "Пицца",
           "Сеты",

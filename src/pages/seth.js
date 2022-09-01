@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import salomon from "../assets/img/seths/salomon.png";
@@ -12,20 +12,21 @@ import topSet from "../assets/img/seths/topSet.png";
 import yakudzaSet from "../assets/img/seths/yakudzaSet.png";
 
 import { Sidebar, Basket, Header, Footer, SethProduct } from "../components";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { setCategory } from "../redux/actions/actionFilters";
 
 function Seth() {
-  const [seths, setSeths] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/db.json")
-      .then(({ data }) => setSeths(data.seths));
-  }, []);
+  const { items } = useSelector(({ seths, filters }) => {
+    return {
+      items: seths.items,
+      filters: filters.sortBy,
+    };
+  });
+  const dispatch = useDispatch();
   return (
     <div className="wrapper">
       <Sidebar
-        onClick={(menu) => console.log(menu)}
+        onClickItem={(index) => dispatch(setCategory(index))}
         items={[
           "Пицца",
           "Сеты",
@@ -46,15 +47,16 @@ function Seth() {
             <div className="cards__inner-title">
               <div className="cards__title">Сеты</div>
               <div className="cards__inner">
-                {seths.map((component) => (
-                  <SethProduct
-                    key={component.id}
-                    title={component.name}
-                    description={`${component.weight} грамм ${component.quantity} шт.`}
-                    price={component.price}
-                    productImg={salomon}
-                  />
-                ))}
+                {items &&
+                  items.map((component) => (
+                    <SethProduct
+                      key={component.id}
+                      title={component.name}
+                      description={`${component.weight} грамм ${component.quantity} шт.`}
+                      price={component.price}
+                      productImg={salomon}
+                    />
+                  ))}
               </div>
             </div>
           </div>

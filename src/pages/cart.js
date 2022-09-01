@@ -5,11 +5,13 @@ import basket from "../assets/img/cart/basket.png";
 import order from "../assets/img/cart/order.jpg";
 
 import { Sidebar, Basket, Header, Footer } from "../components";
+import { setCategory } from "../redux/actions/actionFilters";
 
 function Cart() {
   return (
     <div className="wrapper">
       <Sidebar
+        onClickItem={(index) => setCategory(index)}
         items={[
           "Пицца",
           "Сеты",
