@@ -1,16 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/img/sidebar/logo.svg";
 import { main, seth } from "../utils/const";
 
-function Sidebar({ items, onClickItem }) {
+const Sidebar = React.memo(function SideBar({ items, onClickItem }) {
   const [activeItem, setActiveItem] = useState(null);
   let onSelectItem = (index) => {
     setActiveItem(index);
     onClickItem(index);
   };
-
   const [sidebarMenu, setSidebarMenu] = useState(false);
   return (
     <div>
@@ -42,12 +41,12 @@ function Sidebar({ items, onClickItem }) {
             </li>
           ))}
           {/* 1)реализовать динамичное отображение изображений для каждого пункта меню 
-          (слева от каждой позиции должна быть картинка)
-          2) сделать переход на страницу с сетами */}
+			(слева от каждой позиции должна быть картинка)
+			2) сделать переход на страницу с сетами */}
         </ul>
       </div>
     </div>
   );
-}
+});
 
 export default Sidebar;

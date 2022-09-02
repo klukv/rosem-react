@@ -5,6 +5,15 @@ import search from "../assets/img/main/header/search.svg";
 import { cart } from "../utils/const";
 import { SortPopup } from "../components";
 
+const sortItems = [
+  { name: "По умолчанию", type: "default" },
+  { name: "Название", type: "name" },
+  { name: "Сначала дешевле", type: "more_cheaper" },
+  { name: "Сначала дороже", type: "more_expensive" },
+  { name: "Количество штук", type: "quantity" },
+  { name: "Вес", type: "weight" },
+];
+
 function Header() {
   return (
     <header className="header">
@@ -34,16 +43,7 @@ function Header() {
           <div className="header__clients-delivery">
             <Link to={cart}>Корзина</Link>
           </div>
-          <SortPopup
-            items={[
-              { name: "По умолчанию", type: "default" },
-              { name: "Название", type: "name" },
-              { name: "Сначала дешевле", type: "more_cheaper" },
-              { name: "Сначала дороже", type: "more_expensive" },
-              { name: "Количество штук", type: "quantity" },
-              { name: "Вес", type: "weight" },
-            ]}
-          />
+          <SortPopup items={sortItems} />
           <div className="header__clients-search">
             <a href="#">
               <img src={search} alt="search" />

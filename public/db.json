@@ -2,7 +2,7 @@
 	"seths":[
 		{
 			"id": 0,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/988521/jOdOVIGca02y-9QyIk2rjg5959/ocr",
 			"name": "Саломон сет",
 			"weight": 1050,
 			"quantity": 35,
@@ -10,7 +10,7 @@
 		},
 		{
 			"id": 1,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/1815943/SDp6RoW9xa79tnRhBwS7tA5728/ocr",
 			"name": "Сет '5 Филадельфий'",
 			"weight": 1120,
 			"quantity": 40,
@@ -18,7 +18,7 @@
 		},
 		{
 			"id": 2,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/1344812/a1_uKqzHk3qiTOVNn93sZA5940/ocr",
 			"name": "Филадельфия и лосось сет",
 			"weight": 1260,
 			"quantity": 36,
@@ -26,7 +26,7 @@
 		},
 		{
 			"id": 3,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/2436825/7bedTlZ3TaN4RNT77iKPIQ5975/ocr",
 			"name": "Сет '6 Филадельфий'",
 			"weight": 1320,
 			"quantity": 46,
@@ -34,7 +34,7 @@
 		},
 		{
 			"id": 4,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/226781/3qr9jVp8fBmxm5FkvItkNA5988/ocr",
 			"name": "Топовый сет",
 			"weight": 1020,
 			"quantity": 40,
@@ -42,7 +42,7 @@
 		},
 		{
 			"id": 5,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/2078526/tVkwu5boJwB1GvxvnIhing5889/ocr",
 			"name": "Камикадзе сет",
 			"weight": 1200,
 			"quantity": 52,
@@ -50,7 +50,7 @@
 		},
 		{
 			"id": 6,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/3514805/U19do8fRC5SqUdXnunY8xQ5842/ocr",
 			"name": "Сет '4 Филадельфии'",
 			"weight": 1100,
 			"quantity": 32,
@@ -58,7 +58,7 @@
 		},
 		{
 			"id": 7,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/1815251/4yoNHqrzY9QE3zGUg9LCoA5914/ocr",
 			"name": "Филадельфия LOVE сет",
 			"weight": 1000,
 			"quantity": 40,
@@ -66,7 +66,7 @@
 		},
 		{
 			"id": 8,
-			"imageUrl": 0,
+			"imageUrl": "https://avatars.mds.yandex.net/get-images-cbir/1241315/6FNhwlqOjHYBGcv4JZV09w6004/ocr",
 			"name": "Якудза сет",
 			"weight": 1270,
 			"quantity": 50,

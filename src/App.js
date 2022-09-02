@@ -1,41 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { publicRoutes } from "./routes";
-import { main, cart, seth } from "./utils/const";
-import { setSeths as actionSeths } from "./redux/actions/actionSeths";
-import axios from "axios";
 
-import Main from "./pages/main";
-import Cart from "./pages/cart";
-import Seth from "./pages/seth";
-import { Sidebar, Basket, Header, Footer, SethProduct } from "./components";
+import { Sidebar, Basket, Header, Footer } from "./components";
 import { setCategory } from "./redux/actions/actionFilters";
+
+const arr = [
+  "Пицца",
+  "Сеты",
+  "WOK",
+  "Роллы",
+  "Суши",
+  "Салаты",
+  "Супы",
+  "Корн доги",
+  "Напитки",
+  "Акции",
+];
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/db.json")
-      .then(({ data }) => dispatch(actionSeths(data.seths)));
+  useEffect(() => {}, []);
+
+  const categoryItem = useCallback((index) => {
+    dispatch(setCategory(index));
   }, []);
   return (
     <div className="wrapper">
-      <Sidebar
-        onClickItem={(index) => setCategory(index)}
-        items={[
-          "Пицца",
-          "Сеты",
-          "WOK",
-          "Роллы",
-          "Суши",
-          "Салаты",
-          "Супы",
-          "Корн доги",
-          "Напитки",
-          "Акции",
-        ]}
-      />
+      <Sidebar onClickItem={categoryItem} items={arr} />
       <main>
         <Header />
         <Routes>

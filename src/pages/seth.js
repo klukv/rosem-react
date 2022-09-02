@@ -1,16 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import salomon from "../assets/img/seths/salomon.png";
-import fivePhilad from "../assets/img/seths/fivePhilad.png";
-import fourPhilad from "../assets/img/seths/fourPhilad.png";
-import kamikadze from "../assets/img/seths/kamikadze.png";
-import loveSet from "../assets/img/seths/loveSet.png";
-import philadLosos from "../assets/img/seths/philadLosos.png";
-import sixPhilad from "../assets/img/seths/sixPhilad.png";
-import topSet from "../assets/img/seths/topSet.png";
-import yakudzaSet from "../assets/img/seths/yakudzaSet.png";
-
 import { useSelector } from "react-redux";
 import { SethProduct } from "../components";
 
@@ -35,7 +24,7 @@ function Seth() {
                     title={component.name}
                     description={`${component.weight} грамм ${component.quantity} шт.`}
                     price={component.price}
-                    productImg={salomon}
+                    productImg={component.imageUrl}
                   />
                 ))}
             </div>
