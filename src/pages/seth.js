@@ -2,14 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { SethProduct } from "../components";
+import SethProductLoading from "../components/sethProduct/sethProductLoading";
 
 function Seth() {
-  const { items } = useSelector(({ seths, filters }) => {
+  const { items } = useSelector(({ sethsReducer, filtersReducer }) => {
     return {
-      items: seths.items,
-      filters: filters.sortBy,
+      items: sethsReducer.items,
+      filters: filtersReducer.sortBy,
     };
   });
+  const isLoaded = useSelector(({ sethsReducer }) => sethsReducer.isLoaded);
   return (
     <main>
       <section className="cards">
@@ -17,16 +19,13 @@ function Seth() {
           <div className="cards__inner-title">
             <div className="cards__title">Сеты</div>
             <div className="cards__inner">
-              {items &&
-                items.map((component) => (
-                  <SethProduct
-                    key={component.id}
-                    title={component.name}
-                    description={`${component.weight} грамм ${component.quantity} шт.`}
-                    price={component.price}
-                    productImg={component.imageUrl}
-                  />
-                ))}
+              {isLoaded
+                ? items.map((component) => (
+                    <SethProduct key={component.id} {...component} />
+                  ))
+                : Array(9)
+                    .fill(0)
+                    .map((_, index) => <SethProductLoading key={index} />)}
             </div>
           </div>
         </div>

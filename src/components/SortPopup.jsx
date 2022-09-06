@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSortBy } from "../redux/actions/actionFilters";
 
 const SortPopup = React.memo(function SortPopup({ items }) {
+  const dispatch = useDispatch();
   const sortRef = useRef();
   const [visiablePopup, setVisiablePopup] = useState(false);
-  const [activeItem, setActiveItem] = useState(0);
-  const activeLabel = items[activeItem].name;
-
-  const setItemSort = (index) => {
-    setActiveItem(index);
+  const setSortItem = (name, type) => {
+    dispatch(setSortBy({ name, type }));
     setVisiablePopup(false);
   };
+  const activeLabel = useSelector(
+    ({ filtersReducer }) => filtersReducer.nameSort
+  );
   const handleClick = (e) => {
     if (!e.path.includes(sortRef.current)) {
       setVisiablePopup(false);
@@ -43,11 +46,7 @@ const SortPopup = React.memo(function SortPopup({ items }) {
                     : "header__clients-point"
                 }
               >
-                <a
-                  className={activeItem === index ? "active" : ""}
-                  onClick={() => setItemSort(index)}
-                  href="#"
-                >
+                <a onClick={() => setSortItem(obj.name, obj.type)} href="#">
                   {obj.name}
                 </a>
               </li>

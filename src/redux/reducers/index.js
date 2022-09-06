@@ -1,11 +1,3 @@
-import filtersReducer from "./filters";
-import sethsReducer from "./seths";
-import cartReducer from "./cart";
-import { combineReducers } from "@reduxjs/toolkit";
-
-const rootReducer = combineReducers({
-  filters: filtersReducer,
-  seths: sethsReducer,
-  cart: cartReducer,
-});
-export default rootReducer;
+export { default as cartReducer } from "./cart";
+export { default as filtersReducer } from "./filters";
+export { default as sethsReducer } from "./seths";

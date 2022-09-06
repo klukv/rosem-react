@@ -4,12 +4,22 @@ const initialState = {
 };
 
 const seths = (state = initialState, action) => {
-  if (action.type === "SET_SETHS") {
-    return {
-      ...state,
-      items: action.payload,
-    };
+  switch (action.type) {
+    case "SET_SETHS":
+      return {
+        ...state,
+        items: action.payload,
+        isLoaded: true,
+      };
+
+    case "SET_LOADED":
+      return {
+        ...state,
+        isLoaded: action.payload,
+      };
+
+    default:
+      return state;
   }
-  return state;
 };
 export default seths;

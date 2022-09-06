@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-function SethProduct({ title, description, price, productImg }) {
+
+function SethProduct({ name, weight, quantity, price, imageUrl }) {
   return (
     <div className="cards__seth seth">
       <div className="cards__seth-image">
-        <img src={productImg} alt="seth" />
+        <img src={imageUrl} alt="seth" />
       </div>
       <div className="cards__info-innner">
-        <h2 className="cards__seth-title">{title}</h2>
-        <div className="cards__seth-description">{description}</div>
+        <h2 className="cards__seth-title">{name}</h2>
+        <div className="cards__seth-description">
+          {weight} гр. {quantity} шт.{" "}
+        </div>
         <div className="cards__seth-down">
           <div className="cards__seth-size">{price} руб.</div>
           <button className="cards__seth-btn">Хочу!</button>
@@ -18,8 +21,10 @@ function SethProduct({ title, description, price, productImg }) {
   );
 }
 SethProduct.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  weight: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
+  isLoading: PropTypes.bool,
 };
 export default SethProduct;

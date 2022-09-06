@@ -1,16 +1,15 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/img/sidebar/logo.svg";
 import { main, seth } from "../utils/const";
 
-const Sidebar = React.memo(function SideBar({ items, onClickItem }) {
-  const [activeItem, setActiveItem] = useState(null);
-  let onSelectItem = (index) => {
-    setActiveItem(index);
-    onClickItem(index);
-  };
+const Sidebar = React.memo(function SideBar({ items, selectCategory }) {
   const [sidebarMenu, setSidebarMenu] = useState(false);
+  const activeCategory = useSelector(
+    ({ filtersReducer }) => filtersReducer.category
+  );
   return (
     <div>
       <div
@@ -29,10 +28,10 @@ const Sidebar = React.memo(function SideBar({ items, onClickItem }) {
         <ul className="sidebar__menu">
           {items.map((menu, index) => (
             <li
-              onClick={() => onSelectItem(index)}
+              onClick={() => selectCategory(index)}
               key={`${menu}_${index}`}
               className={
-                activeItem === index
+                activeCategory === index
                   ? "sidebar__menu-point active"
                   : "sidebar__menu-point"
               }
