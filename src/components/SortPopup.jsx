@@ -6,8 +6,8 @@ const SortPopup = React.memo(function SortPopup({ items }) {
   const dispatch = useDispatch();
   const sortRef = useRef();
   const [visiablePopup, setVisiablePopup] = useState(false);
-  const setSortItem = (name, type) => {
-    dispatch(setSortBy({ name, type }));
+  const setSortItem = (name, type,order) => {
+    dispatch(setSortBy({ name, type, order }));
     setVisiablePopup(false);
   };
   const activeLabel = useSelector(
@@ -46,7 +46,7 @@ const SortPopup = React.memo(function SortPopup({ items }) {
                     : "header__clients-point"
                 }
               >
-                <a onClick={() => setSortItem(obj.name, obj.type)} href="#">
+                <a onClick={() => setSortItem(obj.name, obj.type, obj.order)} href="#">
                   {obj.name}
                 </a>
               </li>

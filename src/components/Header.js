@@ -6,12 +6,12 @@ import { cart } from "../utils/const";
 import { SortPopup } from "../components";
 
 const sortItems = [
-  { name: "По умолчанию", type: "default" },
-  { name: "Название", type: "name" },
-  { name: "Сначала дешевле", type: "price" },
-  { name: "Сначала дороже", type: "price" },
-  { name: "Количество штук", type: "quantity" },
-  { name: "Вес", type: "weight" },
+  { name: "По умолчанию", type: "default", order: "desc" },
+  { name: "Название", type: "name", order: "desc" },
+  { name: "Сначала дешевле", type: "price", order: "asc" },
+  { name: "Сначала дороже", type: "price", order: "desc" },
+  { name: "Количество штук", type: "quantity", order: "desc" },
+  { name: "Вес", type: "weight", order: "desc" }, 
 ];
 
 function Header() {

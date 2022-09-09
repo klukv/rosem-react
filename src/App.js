@@ -22,12 +22,16 @@ const arr = [
 
 function App() {
   const dispatch = useDispatch();
-  const { category, sortBy } = useSelector(
+  const { category, sortBy, order } = useSelector(
     ({ filtersReducer }) => filtersReducer
   );
+  const filters = useSelector(
+    ({ filtersReducer }) => filtersReducer
+  );
+  console.log(filters);
   useEffect(() => {
-    dispatch(fetchSeths(category, sortBy));
-  }, [category, sortBy]);
+    dispatch(fetchSeths(category, sortBy, order));
+  }, [category, sortBy, order]);
 
   const categoryItem = useCallback((index) => {
     dispatch(setCategory(index));

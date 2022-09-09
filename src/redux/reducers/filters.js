@@ -2,6 +2,7 @@ const initialState = {
   sortBy: "default",
   nameSort: "По умолчанию",
   category: null,
+  order: "desc",
 };
 
 const filters = (state = initialState, action) => {
@@ -11,6 +12,7 @@ const filters = (state = initialState, action) => {
         ...state,
         nameSort: action.payload.name,
         sortBy: action.payload.type,
+        order: action.payload.order,
       };
     case "SET_CATEGORY":
       return {

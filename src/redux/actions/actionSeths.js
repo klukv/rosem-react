@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const fetchSeths = (category, sortBy) => (dispatch) => {
+export const fetchSeths = (category, sortBy, order) => (dispatch) => {
   dispatch(setLoaded(false));
   axios
-    .get(`http://localhost:3001/seths?_sort=${sortBy}&_order=desc`)
+    .get(`http://localhost:3001/seths?_sort=${sortBy}&_order=${order}`)
     .then(({ data }) => dispatch(setSeths(data)));
 };
 

@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import salomon from '../../assets/img/seths/salomon.png'
 
 function SethProduct({ name, weight, quantity, price, imageUrl }) {
   return (
     <div className="cards__seth seth">
       <div className="cards__seth-image">
-        <img src={imageUrl} alt="seth" />
+        <img src={salomon} alt="seth" />
       </div>
       <div className="cards__info-innner">
         <h2 className="cards__seth-title">{name}</h2>
