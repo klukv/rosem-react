@@ -1,8 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import salomon from '../../assets/img/seths/salomon.png'
+function SethProduct({id, name, weight, quantity, price, imageUrl, clickSeth }) {
 
-function SethProduct({ name, weight, quantity, price, imageUrl }) {
+  const setPropsCart = () => {
+    const objSeth = {
+      id,
+      name,
+      weight,
+      quantity,
+      price,
+    }
+    clickSeth(objSeth)
+  }
   return (
     <div className="cards__seth seth">
       <div className="cards__seth-image">
@@ -15,7 +25,7 @@ function SethProduct({ name, weight, quantity, price, imageUrl }) {
         </div>
         <div className="cards__seth-down">
           <div className="cards__seth-size">{price} руб.</div>
-          <button className="cards__seth-btn">Хочу!</button>
+          <button onClick={setPropsCart} className="cards__seth-btn">Хочу!</button>
         </div>
       </div>
     </div>
@@ -27,5 +37,6 @@ SethProduct.propTypes = {
   quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   isLoading: PropTypes.bool,
+  clickSeth: PropTypes.func,
 };
 export default SethProduct;

@@ -25,10 +25,14 @@ function App() {
   const { category, sortBy, order } = useSelector(
     ({ filtersReducer }) => filtersReducer
   );
-  const filters = useSelector(
-    ({ filtersReducer }) => filtersReducer
+  const cart = useSelector(
+    ({ cartReducer }) => cartReducer
   );
-  console.log(filters);
+  console.log('cart-----', cart);
+  const seths = useSelector(
+    ({ sethsReducer }) => sethsReducer
+  );
+  console.log('seths-----', seths);
   useEffect(() => {
     dispatch(fetchSeths(category, sortBy, order));
   }, [category, sortBy, order]);

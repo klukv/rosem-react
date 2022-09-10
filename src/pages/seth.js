@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SethProduct } from "../components";
 import SethProductLoading from "../components/sethProduct/sethProductLoading";
+import { addSethCart } from "../redux/actions/actionCart";
 
 function Seth() {
+  const dispatch = useDispatch();
   const { items } = useSelector(({ sethsReducer, filtersReducer }) => {
     return {
       items: sethsReducer.items,
@@ -12,6 +14,11 @@ function Seth() {
     };
   });
   const isLoaded = useSelector(({ sethsReducer }) => sethsReducer.isLoaded);
+
+  const handleSethToCart = (objSeth) => {
+    dispatch(addSethCart(objSeth))
+    console.log(objSeth);
+  }
   return (
     <main>
       <section className="cards">
@@ -21,7 +28,7 @@ function Seth() {
             <div className="cards__inner">
               {isLoaded
                 ? items.map((component) => (
-                    <SethProduct key={component.id} {...component} />
+                    <SethProduct key={component.id} {...component} clickSeth={handleSethToCart}/>
                   ))
                 : Array(9)
                     .fill(0)

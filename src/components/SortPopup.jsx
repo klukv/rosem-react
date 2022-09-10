@@ -13,8 +13,9 @@ const SortPopup = React.memo(function SortPopup({ items }) {
   const activeLabel = useSelector(
     ({ filtersReducer }) => filtersReducer.nameSort
   );
-  const handleClick = (e) => {
-    if (!e.path.includes(sortRef.current)) {
+  const handleClick = (event) => {
+    const path = event.path || (event.composedPath && event.composedPath());
+    if (!path.includes(sortRef.current)) {
       setVisiablePopup(false);
     }
   };
