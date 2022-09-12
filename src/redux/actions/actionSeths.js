@@ -3,7 +3,7 @@ import axios from "axios";
 export const fetchSeths = (category, sortBy, order) => (dispatch) => {
   dispatch(setLoaded(false));
   axios
-    .get(`http://localhost:3001/seths?_sort=${sortBy}&_order=${order}`)
+    .get(`/seths?_sort=${sortBy}&_order=${order}`)
     .then(({ data }) => dispatch(setSeths(data)));
 };
 

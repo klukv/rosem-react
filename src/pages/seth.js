@@ -16,9 +16,8 @@ function Seth() {
   const isLoaded = useSelector(({ sethsReducer }) => sethsReducer.isLoaded);
 
   const handleSethToCart = (objSeth) => {
-    dispatch(addSethCart(objSeth))
-    console.log(objSeth);
-  }
+    dispatch(addSethCart(objSeth));
+  };
   return (
     <main>
       <section className="cards">
@@ -28,7 +27,11 @@ function Seth() {
             <div className="cards__inner">
               {isLoaded
                 ? items.map((component) => (
-                    <SethProduct key={component.id} {...component} clickSeth={handleSethToCart}/>
+                    <SethProduct
+                      key={component.id}
+                      {...component}
+                      clickSeth={handleSethToCart}
+                    />
                   ))
                 : Array(9)
                     .fill(0)
