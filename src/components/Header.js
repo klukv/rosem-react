@@ -11,7 +11,7 @@ const sortItems = [
   { name: "Сначала дешевле", type: "price", order: "asc" },
   { name: "Сначала дороже", type: "price", order: "desc" },
   { name: "Количество штук", type: "quantity", order: "desc" },
-  { name: "Вес", type: "weight", order: "desc" }, 
+  { name: "Вес", type: "weight", order: "desc" },
 ];
 
 function Header() {
@@ -34,7 +34,7 @@ function Header() {
         </div>
         <div className="header__city">
           <h2 className="header__city-title">Город:</h2>
-          <div className="header__city-name">Бишкек</div>
+          <div className="header__city-name">Воронеж</div>
         </div>
         <div className="header__clients">
           <div className="header__clients-reviews">

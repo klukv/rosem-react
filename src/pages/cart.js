@@ -2,15 +2,29 @@ import React from "react";
 import rubbish from "../assets/img/cart/rubbish.svg";
 import basket from "../assets/img/cart/basket.png";
 import { CartProduct } from "../components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  clearCart,
+  clearCartItem,
+  plusCartItem,
+} from "../redux/actions/actionCart";
 
 function Cart() {
+  const dispatch = useDispatch();
   const { totalCount, totalPrice, items } = useSelector(
     ({ cartReducer }) => cartReducer
   );
   const addSeths = Object.keys(items).map((key) => {
     return items[key].items[0];
   });
+
+  const onClearCart = () => {
+    dispatch(clearCart());
+  };
+
+  const onCloseItem = (id) => {
+    dispatch(clearCartItem(id));
+  };
   return (
     <main>
       <div className="container-card">
@@ -23,15 +37,20 @@ function Cart() {
           </div>
           <div className="order__btn">
             <img src={rubbish} alt="basket" />
-            <button className="order__clear">Очистить корзину</button>
+            <button onClick={onClearCart} className="order__clear">
+              Очистить корзину
+            </button>
           </div>
           {addSeths.map((obj, index) => (
             <CartProduct
               key={index}
+              id={obj.id}
               name={obj.name}
               weight={obj.weight}
               quantity={obj.quantity}
               totalPrice={items[obj.id].totalPrice}
+              totalCount={items[obj.id].items.length}
+              onClose={onCloseItem}
             />
           ))}
           <div className="order__total">

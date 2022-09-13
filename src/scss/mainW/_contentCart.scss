@@ -45,6 +45,11 @@ $letter-spacing-default: 0.7px;
 		background-color: #ffffff;
 	}
 }
+.buttonMinus {
+	&::before {
+		background-image: url(../assets/img/cart/minus.svg);
+	}
+}
 .container {
 	max-width: 960px;
 	margin: 0 auto;
@@ -56,6 +61,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	.order {
+		width: 510px;
 		&__name-page {
 			display: flex;
 			align-items: center;
@@ -159,16 +165,17 @@ main {
 				font-weight: 700;
 				font-size: 20px;
 				line-height: 17px;
+				padding-right: 12px;
 			}
 			&-totalCount {
-				padding: 0px 20px;
+				padding: 0px 10px;
 				font-size: 22px;
 				font-weight: 700;
 				line-height: 20px;
 			}
 			&-btn {
-				width: 21px;
-				height: 21px;
+				width: 18px;
+				height: 18px;
 				&::before {
 					width: 12px;
 					height: 12px;

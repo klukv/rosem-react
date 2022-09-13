@@ -1,7 +1,19 @@
 import React from "react";
 import order from "../assets/img/cart/order.jpg";
 
-function CartProduct({ name, weight, quantity, totalPrice }) {
+function CartProduct({
+  id,
+  name,
+  weight,
+  quantity,
+  totalPrice,
+  totalCount,
+  onClose,
+}) {
+  const handleRemoveItem = () => {
+    onClose(id);
+  };
+
   return (
     <div className="order__eat">
       <div className="order__eat-img">
@@ -9,11 +21,15 @@ function CartProduct({ name, weight, quantity, totalPrice }) {
       </div>
       <div className="order__eat-info">
         <h2 className="order__eat-title">{name}</h2>
-        <button className="order__eat-close"></button>
-        <div className="order__eat-weight">{weight}</div>
+        <button
+          onClick={handleRemoveItem}
+          className="order__eat-close"
+        ></button>
+        <div className="order__eat-weight">{weight} гр.</div>
         <div className="order__eat-price">
           <div className="order__eat-totalPrice">{totalPrice} руб. -</div>
-          <div className="order__eat-totalCount">10</div>
+          <button className="order__eat-btn buttonAdd buttonMinus"></button>
+          <div className="order__eat-totalCount">{totalCount}</div>
           <button className="order__eat-btn buttonAdd"></button>
         </div>
         <div className="order__structure">
