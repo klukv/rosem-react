@@ -7,7 +7,7 @@ import { SortPopup } from "../components";
 
 const sortItems = [
   { name: "По умолчанию", type: "default", order: "desc" },
-  { name: "Название", type: "name", order: "desc" },
+  { name: "Название", type: "name", order: "asc" },
   { name: "Сначала дешевле", type: "price", order: "asc" },
   { name: "Сначала дороже", type: "price", order: "desc" },
   { name: "Количество штук", type: "quantity", order: "desc" },

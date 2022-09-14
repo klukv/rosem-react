@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   clearCart,
   clearCartItem,
+  minusCartItem,
   plusCartItem,
 } from "../redux/actions/actionCart";
 
@@ -24,6 +25,14 @@ function Cart() {
 
   const onCloseItem = (id) => {
     dispatch(clearCartItem(id));
+  };
+
+  const onPlusItem = (id) => {
+    dispatch(plusCartItem(id));
+  };
+
+  const onMinusItem = (id) => {
+    dispatch(minusCartItem(id));
   };
   return (
     <main>
@@ -51,6 +60,8 @@ function Cart() {
               totalPrice={items[obj.id].totalPrice}
               totalCount={items[obj.id].items.length}
               onClose={onCloseItem}
+              plusItem={onPlusItem}
+              minusItem={onMinusItem}
             />
           ))}
           <div className="order__total">

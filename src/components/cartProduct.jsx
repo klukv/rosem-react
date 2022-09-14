@@ -9,9 +9,19 @@ function CartProduct({
   totalPrice,
   totalCount,
   onClose,
+  plusItem,
+  minusItem,
 }) {
   const handleRemoveItem = () => {
     onClose(id);
+  };
+
+  const handlePlusItem = () => {
+    plusItem(id);
+  };
+
+  const handleMinusItem = () => {
+    minusItem(id);
   };
 
   return (
@@ -28,9 +38,15 @@ function CartProduct({
         <div className="order__eat-weight">{weight} гр.</div>
         <div className="order__eat-price">
           <div className="order__eat-totalPrice">{totalPrice} руб. -</div>
-          <button className="order__eat-btn buttonAdd buttonMinus"></button>
+          <button
+            onClick={handleMinusItem}
+            className="order__eat-btn buttonAdd buttonMinus"
+          ></button>
           <div className="order__eat-totalCount">{totalCount}</div>
-          <button className="order__eat-btn buttonAdd"></button>
+          <button
+            onClick={handlePlusItem}
+            className="order__eat-btn buttonAdd"
+          ></button>
         </div>
         <div className="order__structure">
           <h3 className="order__structure-title">Количество штук</h3>
