@@ -7,18 +7,31 @@ import { Sidebar, Basket, Header, Footer } from "./components";
 import { setCategory } from "./redux/actions/actionFilters";
 import { fetchSeths } from "./redux/actions/actionSeths";
 
-const arr = [
-  "Пицца",
-  "Сеты",
-  "WOK",
-  "Роллы",
-  "Суши",
-  "Салаты",
-  "Супы",
-  "Корн доги",
-  "Напитки",
-  "Акции",
-];
+// const arr = [
+//   "Пицца",
+//   "Сеты",
+//   "WOK",
+//   "Роллы",
+//   "Суши",
+//   "Салаты",
+//   "Супы",
+//   "Корн доги",
+//   "Напитки",
+//   "Акции",
+// ];
+
+const arr = {
+  pizza: "Пицца",
+  seth: "Сеты",
+  wok: "WOK",
+  rolls: "Роллы",
+  sushi: "Суши",
+  salad: "Салаты",
+  soup: "Супы",
+  corn: "Корн доги",
+  drink: "Напитки",
+  stock: "Акции",
+};
 
 function App() {
   const dispatch = useDispatch();

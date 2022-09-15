@@ -10,6 +10,9 @@ const Sidebar = React.memo(function SideBar({ items, selectCategory }) {
   const activeCategory = useSelector(
     ({ filtersReducer }) => filtersReducer.category
   );
+  const keysItems = Object.keys(items);
+  const valuesItems = Object.values(items);
+
   return (
     <div>
       <div
@@ -26,7 +29,7 @@ const Sidebar = React.memo(function SideBar({ items, selectCategory }) {
           <h2 className="sidebar__tittle">Romsem</h2>
         </div>
         <ul className="sidebar__menu">
-          {items.map((menu, index) => (
+          {valuesItems.map((menu, index) => (
             <li
               onClick={() => selectCategory(index)}
               key={`${menu}_${index}`}
@@ -36,12 +39,14 @@ const Sidebar = React.memo(function SideBar({ items, selectCategory }) {
                   : "sidebar__menu-point"
               }
             >
-              <Link to={menu === "Сеты" ? seth : ""}>{menu}</Link>
+              <span className={`${keysItems[index]}`}>
+                <Link to={menu === "Сеты" ? seth : ""}>{menu}</Link>
+              </span>
             </li>
           ))}
           {/* 1)реализовать динамичное отображение изображений для каждого пункта меню 
 			(слева от каждой позиции должна быть картинка)
-			2) сделать переход на страницу с сетами */}
+			*/}
         </ul>
       </div>
     </div>

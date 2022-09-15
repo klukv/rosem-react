@@ -78,34 +78,34 @@ $heightIcon: 30px;
 			}
 		}
 		.pizza {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/pizza.svg");
 		}
 		.seth {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/seth.svg");
 		}
 		.wok {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/wok.svg");
 		}
 		.rolls {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/rolls.svg");
 		}
 		.sushi {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/sushi.svg");
 		}
 		.salad {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/salad.svg");
 		}
 		.soup {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/soup.svg");
 		}
 		.corn {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/corn_dog.svg");
 		}
 		.drink {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/drink.svg");
 		}
 		.stock {
-			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "");
+			@include sidebarMenu($padding-left-icon, $widthIcon, $heightIcon, "../assets/img/sidebar/stock.svg");
 		}
 	}
 }

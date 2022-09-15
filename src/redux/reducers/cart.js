@@ -43,7 +43,6 @@ const cart = (state = initialState, action) => {
     case "PLUS_CART_ITEM": {
       const newObj = state.items[action.payload].items[0];
       const oldTotalPrice = state.items[action.payload].totalPrice;
-
       const plusOneItem = {
         ...state.items,
         [action.payload]: {
@@ -56,13 +55,11 @@ const cart = (state = initialState, action) => {
         ...state,
         items: plusOneItem,
         totalCount: state.totalCount + 1,
-        totalPrice: state.totalPrice + oldTotalPrice,
+        totalPrice: state.totalPrice + newObj.price,
       };
     }
 
     case "MINUS_CART_ITEM": {
-      const oneSeth = state.items[action.payload].items[0];
-
       const oldObjects = state.items[action.payload].items;
       const oldTotalPrice = state.items[action.payload].items[0].price;
 
